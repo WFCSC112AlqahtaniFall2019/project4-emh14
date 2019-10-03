@@ -16,7 +16,7 @@ int main() {
     newGame.initializeBoard();
     newGame.printBoard();
 
-    while (!newGame.checkForWin()) {
+    while (!newGame.checkForWin() && !newGame.isBoardFull()) {
 
         //Prompt for input
         cout << endl << endl << "Enter Row and Column: " << endl;
@@ -42,6 +42,8 @@ int main() {
         newGame.placeMark(chooseRow, chooseCol);
         newGame.printBoard();
 
+        //Change player
+        newGame.changePlayer();
     }
     return 0;
 }

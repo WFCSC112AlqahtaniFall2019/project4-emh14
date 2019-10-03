@@ -28,13 +28,18 @@ int main() {
         srand(time(NULL)); //seed random function by time
 
         //if random number generator chooses 2, then change player
-        if ((rand()%2 + 1) == 2){
+        if ((rand()%2 + 1) == 1){
             newGame.changePlayer();
         }
+    } else {
+        //Change player to ensure Player 1 starts
+        newGame.changePlayer();
     }
 
-
     while (!newGame.checkForWin() && !newGame.isBoardFull()) {
+
+        //Change player
+        newGame.changePlayer();
 
         //Have computer play if in single player mode and is the computer's turn
         if(numPlayers==1 && newGame.getCurrentPlayerNumber() == 2){
@@ -82,9 +87,19 @@ int main() {
         }
         //Print game board
         newGame.printBoard();
-
-        //Change player
-        newGame.changePlayer();
     }
+
+    //Print results of game
+    if (newGame.checkForWin()){
+        if (numPlayers==1 && newGame.getCurrentPlayerNumber() == 2) {
+            cout << "Computer wins!" << endl;
+        } else {
+            cout << "Player " << newGame.getCurrentPlayerNumber() << " wins!" << endl;
+        }
+    }
+    else{
+        cout << "It is a draw!" << endl;
+    }
+
     return 0;
 }

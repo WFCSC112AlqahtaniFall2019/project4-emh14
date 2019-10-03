@@ -1,5 +1,5 @@
 /* Class: TicTacToe
- * Author: [FINISH ME]
+ * Author: Ethan Harrison
  * Description: A program that implements the game Tic-Tac-Toe
  */
 

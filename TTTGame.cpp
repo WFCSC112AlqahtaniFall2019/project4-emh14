@@ -16,6 +16,12 @@ int main() {
     int numPlayers;
     cout << "One-player or Two-player (1 or 2): ";
     cin >> numPlayers;
+
+    //Check to make sure number of players is valid
+    while (numPlayers != 1 && numPlayers != 2){
+        cout << "Invalid number of players. Enter One-player or Two-player (1 or 2): ";
+        cin >> numPlayers;
+    }
     cout << endl;
 
     //Creates and prints clean board
